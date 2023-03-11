@@ -14,6 +14,9 @@ import { Basicform } from "./Basicform";
 import { MovieDetails } from "./MovieDetails";
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
+import { NotFound } from "./NotFound";
+import { Home } from "./Home";
+import { useEffect } from "react";
 
 
   const INITIAL_MOVIE_LIST = [
@@ -122,9 +125,8 @@ function App() {  // default export
       borderRadius: "0px",
       minHeight: "100vh",
     }
-
-  const [movieList, setMovieList] = useState(INITIAL_MOVIE_LIST);
-
+    const [movieList, setMovieList] = useState([]);
+  
   const navigate = useNavigate();
 
   return (
@@ -152,9 +154,9 @@ function App() {  // default export
 				<Routes>
 					<Route path="/" element={<Home />} />
 					<Route path="/tic-tac-toe" element={<TicTacToe />} />
-					<Route path="/movies" element={<MovieList movieList = {movieList} setMovieList={setMovieList} />} />
+					<Route path="/movies" element={<MovieList/>} />
 					<Route path="/addmovie" element={<Addmovie movieList = {movieList} setMovieList={setMovieList}/>} />
-          <Route path="/movies/:id" element={<MovieDetails movieList = {movieList}/>}/>
+          <Route path="/movies/:id" element={<MovieDetails/>}/>
 					<Route path="/colorgame" element={<AddColor />} />
           <Route path="/basic-form" element={<Basicform />} />
           <Route path="*" element={<NotFound />} />
@@ -163,23 +165,6 @@ function App() {  // default export
 		</Paper>
 	</ThemeProvider>
   );
-}
-
-function Home(){
-  return (
-    <div className="home">
-      <h1>🎊🤩 Welcome to the Home Page 🤩🎊</h1>
-    </div>
-  )
-}
-
-function NotFound(){
-  return (
-    <div>
-      <h1>Not Found</h1>
-      <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fuxplanet.org%2Ftop-10-animated-404-pages-4e287c2c3414&psig=AOvVaw1voOxQTMrBLwshkBJKmkgD&ust=1675397890958000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCIDP-tL99fwCFQAAAAAdAAAAABAE" alt="404 Not Found" />
-    </div>
-  )
 }
 
 export default App;

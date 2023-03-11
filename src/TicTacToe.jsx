@@ -49,7 +49,7 @@ export function TicTacToe() {
 
     const restartGame = () => {
         setBoard([null, null, null, null, null, null, null, null, null])
-        setIsXTurn(true);
+        setIsXTurn(true);   
     };
 
     return (

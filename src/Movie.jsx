@@ -3,13 +3,14 @@ import { Counter } from "./Counter";
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from "react-router-dom";
 
-export function Movie({ movie, id }) {
+export function Movie({ movie, id, deleteButton }) {
 
     const styles = {
         // Conditional Stylings
@@ -57,9 +58,12 @@ export function Movie({ movie, id }) {
 
                     {/* Conditional Rendering - Removed from DOM */}
                     {show ? <p className="movie-summary">{movie.summary}</p> : null}
-
-                    <Counter />
                 </CardContent>
+
+                {/* Render Props */}
+                <CardActions>
+                    <Counter /> {deleteButton}
+                </CardActions>
             </Card>
         </div>
     );
