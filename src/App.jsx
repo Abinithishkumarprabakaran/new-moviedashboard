@@ -155,7 +155,7 @@ function App() {  // default export
 					<Route path="/" element={<Home />} />
 					<Route path="/tic-tac-toe" element={<TicTacToe />} />
 					<Route path="/movies" element={<MovieList/>} />
-					<Route path="/addmovie" element={<Addmovie movieList = {movieList} setMovieList={setMovieList}/>} />
+					<Route path="/addmovie" element={<Addmovie />} />
           <Route path="/movies/:id" element={<MovieDetails/>}/>
 					<Route path="/colorgame" element={<AddColor />} />
           <Route path="/basic-form" element={<Basicform />} />
