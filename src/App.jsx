@@ -18,7 +18,7 @@ import { NotFound } from "./NotFound";
 import { Home } from "./Home";
 import { useEffect } from "react";
 import { Editmovie } from "./Editmovie";
-
+import { API } from "./global.js"
 
   const INITIAL_MOVIE_LIST = [
     {

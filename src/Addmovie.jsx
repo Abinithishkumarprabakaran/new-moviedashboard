@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { API } from "./global.js"
 
 // export function Addmovie() {
 
@@ -24,7 +25,7 @@ import * as yup from "yup";
 //             trailer: trailer
 //         };
         
-//         await fetch("https://63d75fb7afbba6b7c93beb15.mockapi.io/movies", {
+//         await fetch(`${API}/movies`, {
 //             method: "POST",
 //             body: JSON.stringify(newMovie),
 //             headers: {
@@ -114,7 +115,7 @@ export function Addmovie() {
 
     const addMovie = async (newMovie) => {
     
-        await fetch("https://63d75fb7afbba6b7c93beb15.mockapi.io/movies", {
+        await fetch(`${API}/movies`, {
             method: "POST",
             body: JSON.stringify(newMovie),
             headers: {

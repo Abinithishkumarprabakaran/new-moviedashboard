@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import { useNavigate } from "react-router-dom";
+import { API } from "./global.js"
 
 export function MovieList({}) {
 
@@ -13,7 +14,7 @@ export function MovieList({}) {
   const [movieList, setMovieList] = useState([]);    // map only work for an object!..
 
   const getMovies = () => {
-    fetch("https://63d75fb7afbba6b7c93beb15.mockapi.io/movies")
+    fetch(`${API}/movies`)
       .then((data) => data.json())
       .then((mvs) => setMovieList(mvs));
   };
@@ -22,7 +23,7 @@ export function MovieList({}) {
 
   const deleteMovie = (id) => {
     // console.log("Deleting Movie", id)
-    fetch(`https://63d75fb7afbba6b7c93beb15.mockapi.io/movies/${id}`, {method: "DELETE"})
+    fetch(`${API}/movies/${id}`, {method: "DELETE"})
       .then(()=>getMovies());
   }
   return (

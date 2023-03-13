@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
+import { API } from "./global.js"
 
 const formValidationSchema = yup.object({
   name: yup
@@ -36,7 +37,7 @@ export function Editmovie() {
   const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    fetch(`https://63d75fb7afbba6b7c93beb15.mockapi.io/movies/${id}`, {method: "GET"})
+    fetch(`${API}/movies/${id}`, {method: "GET"})
       .then((data) => data.json())
       .then((mvs) => setMovie(mvs));
   },[id])
