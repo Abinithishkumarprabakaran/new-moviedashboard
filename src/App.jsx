@@ -17,6 +17,7 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import { NotFound } from "./NotFound";
 import { Home } from "./Home";
 import { useEffect } from "react";
+import { Editmovie } from "./Editmovie";
 
 
   const INITIAL_MOVIE_LIST = [
@@ -159,6 +160,7 @@ function App() {  // default export
           <Route path="/movies/:id" element={<MovieDetails/>}/>
 					<Route path="/colorgame" element={<AddColor />} />
           <Route path="/basic-form" element={<Basicform />} />
+          <Route path="/edit-movie/:id" element={<Editmovie />} />
           <Route path="*" element={<NotFound />} />
 				</Routes>
 			</div>
@@ -168,4 +170,6 @@ function App() {  // default export
 }
 
 export default App;
+
+
 

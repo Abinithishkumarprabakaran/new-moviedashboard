@@ -16,7 +16,7 @@ export function MovieDetails() {
         .then((mvs) => setMovie(mvs));
     },[id])
 
-	console.log(movie)
+	// console.log(movie)
 
 	const styles = {
 		// Conditional Stylings

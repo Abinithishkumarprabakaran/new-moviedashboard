@@ -11,7 +11,7 @@ export function TicTacToe() {
     const { width, height } = useWindowSize()
 
     const handClick = (index) => {
-        console.log(index)
+        // console.log(index)
 
         // If no winner && If its Untouched -> Allow Update
         if( !winner && board[index] === null ){
@@ -38,7 +38,7 @@ export function TicTacToe() {
         for (let i = 0; i < lines.length; i++){
             const [a, b, c] = lines[i];
             if( board[a] !== null && board[a] === board[b] && board[b] === board[c]){
-                console.log("Winner", board[a]);
+                // console.log("Winner", board[a]);
                 return board[a];
             }
         }

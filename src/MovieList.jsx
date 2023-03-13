@@ -3,10 +3,12 @@ import { Addmovie } from "./Addmovie";
 import { IconButton } from "@mui/material";
 import { useState, useEffect } from 'react'
 import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import { useNavigate } from "react-router-dom";
 
 export function MovieList({}) {
 
-  // const deleteMovie = async (id) => {};
+  const navigate = useNavigate();
   
   const [movieList, setMovieList] = useState([]);    // map only work for an object!..
 
@@ -19,7 +21,7 @@ export function MovieList({}) {
   useEffect(() => getMovies(),[])
 
   const deleteMovie = (id) => {
-    console.log("Deleting Movie", id)
+    // console.log("Deleting Movie", id)
     fetch(`https://63d75fb7afbba6b7c93beb15.mockapi.io/movies/${id}`, {method: "DELETE"})
       .then(()=>getMovies());
   }
@@ -39,13 +41,15 @@ export function MovieList({}) {
                 <DeleteIcon />
               </IconButton>}
           
-          // editButton = {
-          // <IconButton
-          //     sx={{ marginLeft:"auto" }}
-          //     >
-          //         <EditIcon/>
-          //     </IconButton>
-          // }
+            editButton = {
+              <IconButton
+                color="secondary"
+                onClick={() => {navigate(`/edit-movie/${mv.id}`)}}
+                sx={{ marginLeft:"auto" }}
+                >
+                  <EditIcon/>
+              </IconButton>
+            }
           />
         ))}
       </div>

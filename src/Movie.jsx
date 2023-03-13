@@ -10,7 +10,7 @@ import ExpandLessIcon from '@mui/icons-material/ExpandLess';
 import InfoIcon from '@mui/icons-material/Info';
 import { useNavigate } from "react-router-dom";
 
-export function Movie({ movie, id, deleteButton }) {
+export function Movie({ movie, id, deleteButton, editButton }) {
 
     const styles = {
         // Conditional Stylings
@@ -62,7 +62,7 @@ export function Movie({ movie, id, deleteButton }) {
 
                 {/* Render Props */}
                 <CardActions>
-                    <Counter /> {deleteButton}
+                    <Counter /> {editButton} {deleteButton}
                 </CardActions>
             </Card>
         </div>
