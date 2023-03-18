@@ -16,7 +16,7 @@ const formValidationSchema = yup.object({
           .min(4).url(),
   rating: yup
           .number()
-          .required()
+          .required()   
           .min(0)
           .max(10),
   summary: yup
@@ -66,7 +66,7 @@ const navigate = useNavigate();
 
 const updatedMovie = async (editedMovie) => {
 
-    await fetch(`https://63d75fb7afbba6b7c93beb15.mockapi.io/movies/${id}`, {
+    await fetch(`${API}/movies/${id}`, {
         method: "PUT",
         body: JSON.stringify(editedMovie),
         headers: {

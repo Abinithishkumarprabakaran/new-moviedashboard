@@ -35,7 +35,8 @@ export function MovieDetails() {
 					title="Tum Hi Ho | Aashiqui 2 | Full Video Song HD | Aditya Roy Kapur, Shraddha Kapoor | Music - Mithoon"
 					frameborder="0"
 					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-					allowfullscreen></iframe>
+					allowfullscreen>
+			</iframe>
 			<div className="movie-details-container">
 				<div className="movie-specs">
 					<h2 className="movie-name">
