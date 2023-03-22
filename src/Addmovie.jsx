@@ -105,8 +105,9 @@ export function Addmovie() {
             summary: '',
             trailer: '' },
         validationSchema: formValidationSchema,
-        onSubmit: (newMovie) => {
-            // console.log("Form Values", newMovie)
+        onSubmit: (newMov) => {
+            let newMovie = []
+            newMovie.push(newMov)
             addMovie(newMovie)
         }
       });

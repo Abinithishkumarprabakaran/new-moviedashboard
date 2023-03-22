@@ -31,21 +31,21 @@ export function MovieList({}) {
       <div className="movie-list">
         {movieList.map((mv) => (
           <Movie 
-            key={mv.id} 
+            key={mv._id} 
             movie={mv} 
-            id={mv.id}
+            id={mv._id}
             deleteButton={
               <IconButton 
                 sx={{ marginLeft:"auto" }}
                 color="error"
-                onClick={() => {deleteMovie(mv.id)}}>
+                onClick={() => {deleteMovie(mv._id)}}>
                 <DeleteIcon />
               </IconButton>}
           
             editButton = {
               <IconButton
                 color="secondary"
-                onClick={() => {navigate(`/edit-movie/${mv.id}`)}}
+                onClick={() => {navigate(`/edit-movie/${mv._id}`)}}
                 sx={{ marginLeft:"auto" }}
                 >
                   <EditIcon/>
