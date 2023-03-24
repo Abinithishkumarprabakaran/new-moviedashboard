@@ -42,11 +42,11 @@ export function Editmovie() {
       .then((mvs) => setMovie(mvs));
   },[id])
 
-  return movie ? <EditMovieForm movie={movie} id={id} /> : <h2>Loading...</h2>;
+  return movie ? <EditMovieForm movie={movie} /> : <h2>Loading...</h2>;
 }
 
 
-function EditMovieForm({ movie, id }) {
+function EditMovieForm({ movie }) {
 
   const {handleSubmit,handleChange,handleBlur,values,errors,touched} = useFormik({
     initialValues: { 
@@ -57,7 +57,7 @@ function EditMovieForm({ movie, id }) {
         trailer: `${movie.trailer}` },
     validationSchema: formValidationSchema,
     onSubmit: (editedMovie) => {
-        // console.log("Form Values", editedMovie)
+        console.log("Form Values", editedMovie)
         updatedMovie(editedMovie)
     }
   });
@@ -66,7 +66,7 @@ const navigate = useNavigate();
 
 const updatedMovie = async (editedMovie) => {
 
-    await fetch(`${API}/movies/${id}`, {
+    await fetch(`${API}/movies/${movie._id}`, {
         method: "PUT",
         body: JSON.stringify(editedMovie),
         headers: {
